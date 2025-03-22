@@ -1,0 +1,2 @@
+*.h linguist-language=C++
+*.x linguist-language=Linker Script

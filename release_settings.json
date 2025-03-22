@@ -1,0 +1,50 @@
+{
+	"title": "The Koopa Who Stole Christmas",
+	"version": "1.1.2",
+	"rom_path": "tkwsc.nds",
+	"release_folder": "release",
+	"include_folder": "release_include",
+	"xdelta_folder": "xdelta",
+	"xdelta_folder_name": "xdeltaUI Patcher",
+	"patch_folder_name": "TKWSC Patches",
+	"clean_roms_folder": "clean_roms",
+
+	"rom_versions": [
+		{
+			"name": "JP",
+			"file": "0025 - Super Mario 64 DS (J)(Trashman).nds",
+			"hashes": {
+				"MD5": "3d68961ec67d4b6746def9dbe3b95a6b",
+				"SHA-1": "b4fd22fff422cf55fdb693e7ea471f46d23bb584",
+				"SHA-256": "738816bad34e32b4485e1bde5de6703ccb8bd9209ea6aa1ef1dc5919f857e241"
+			}
+		},
+		{
+			"name": "EUR",
+			"file": "0022 - Super Mario 64 DS (E)(Wet 'N' Wild).nds",
+			"hashes": {
+				"MD5": "867b3d17ad268e10357c9754a77147e5",
+				"SHA-1": "1367529f2cb23e76ef295cb1727333ae8f0a6cd7",
+				"SHA-256": "ce5829aaa79f06c67140ed1f45cbca738b0a9d0180538c8c1498472d859db032"
+			}
+		},
+		{
+			"name": "US v1",
+			"file": "0037 - Super Mario 64 DS (U)(Trashman).nds",
+			"hashes": {
+				"MD5": "82ea4525a39dc2f484a054cff3f1b834",
+				"SHA-1": "a5b8bd846725965c588b6fc591f1fe822f7bbdbd",
+				"SHA-256": "916056a27ffb07d1bae2ce0ca6f6464c1621c737dc96657a7b9eab4d3bccfc87"
+			}
+		},
+		{
+			"name": "US v2",
+			"file": "0056 - Super Mario 64 DS (v01) (U)(Trashman).nds",
+			"hashes": {
+				"MD5": "4ced5213f558e297541cb7314c909401",
+				"SHA-1": "7bf8a92b259e303899851034d85c531ccdc532e2",
+				"SHA-256": "14aa4cd7b7a63a1b5dc0aa8f6f83c4a188e94b42027f0bb3c678353527d8b228"
+			}
+		}
+	]
+}

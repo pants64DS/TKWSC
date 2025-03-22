@@ -1,0 +1,747 @@
+
+.global FUNC_02115FF0
+.global FUNC_0211691C
+.global FUNC_0211696C
+
+.global _ZN6Snufit11State0Func0Ev
+.global _ZN6Snufit11State0Func1Ev
+.global _ZN6Snufit11State1Func0Ev
+.global _ZN6Snufit11State1Func1Ev
+.global _ZN6Snufit11State2Func0Ev
+.global _ZN6Snufit11State2Func1Ev
+.global _ZN6Snufit11State3Func0Ev
+.global _ZN6Snufit11State3Func1Ev
+
+FUNC_02115F84:
+    push    {r4,r14}
+    sub     r13,r13,#0x10
+    mov     r4,r0
+    bl      _ZN5Actor13SmallPoofDustEv
+    ldr     r0,[r4,#0x5C]
+    mov     r2,#0x0
+    str     r0,[r13,#0x4]
+    ldr     r0,[r4,#0x60]
+    add     r1,r13,#0x4
+    str     r0,[r13,#0x8]
+    ldr     r3,[r4,#0x64]
+    mov     r0,r4
+    str     r3,[r13,#0xC]
+    str     r2,[r13]
+    ldrb    r2,[r4,#0x10A]
+    mov     r3,#0xA000
+    add     r2,r2,#0x1
+    bl      0x2010714
+    mov     r0,r4
+    bl      _ZN5Actor24KillAndTrackInDeathTableEv
+    ldr     r0,=#0x11E
+    add     r1,r4,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x10
+    pop     {r4,r15}
+
+FUNC_02115FF0:
+    push    {r4-r6,r14}
+    sub     r13,r13,#0x20
+    mov     r6,r0
+    ldr     r0,[r6,#0x134]
+    cmp     r0,#0x0
+    addeq   r13,r13,#0x20
+    popeq   {r4-r6,r15}
+    bl      _ZN5Actor10FindWithIDEj
+    movs    r5,r0
+    addeq   r13,r13,#0x20
+    popeq   {r4-r6,r15}
+    ldr     r4,[r6,#0x130]
+    ands    r0,r4,#0x40000
+    beq     LAB_02116060
+    mov     r3,#0x4
+    mov     r0,r6
+    mov     r1,r5
+    mov     r2,#0x0
+    str     r3,[r6,#0x10C]
+    bl      _ZN5Enemy12KillByAttackER5Actor
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_02116060:
+    ands    r0,r4,#0x2400
+    beq     LAB_02116098
+    mov     r3,#0x2
+    mov     r0,r6
+    mov     r1,r5
+    mov     r2,#0x0
+    str     r3,[r6,#0x10C]
+    bl      _ZN5Enemy12KillByAttackER5Actor
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_02116098:
+    ldr     r0,=#0x4380
+    ands    r0,r4,r0
+    beq     LAB_021160D4
+    mov     r3,#0x3
+    mov     r0,r6
+    mov     r1,r5
+    mov     r2,#0x0
+    str     r3,[r6,#0x10C]
+    bl      _ZN5Enemy12KillByAttackER5Actor
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_021160D4:
+    mov     r0,r6
+    mov     r1,r5
+    bl      _ZN5Actor24BumpedUnderneathByPlayerER6Player
+    cmp     r0,#0x1
+    bne     LAB_0211610C
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    ldr     r1,=_ZN6Snufit6statesE + 0x10
+    mov     r0,r6
+    bl      FUNC_0211691C
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_0211610C:
+    ands    r0,r4,#0x10
+    beq     LAB_02116154
+    mov     r0,#0x2000
+    mov     r3,#0x0
+    rsb     r4,r0,#0x0
+    add     r1,r13,#0xC
+    mov     r0,r6
+    mov     r2,r5
+    strh    r4,[r13,#0xC]
+    strh    r3,[r13,#0xE]
+    strh    r3,[r13,#0x10]
+    bl      _ZN5Enemy20KillByInvincibleCharERK10Vector3_16R6Player
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_02116154:
+    ands    r0,r4,#0x40
+    beq     LAB_0211618C
+    mov     r3,#0x2
+    mov     r0,r6
+    mov     r1,r5
+    mov     r2,#0x0
+    str     r3,[r6,#0x10C]
+    bl      _ZN5Enemy12KillByAttackER5Actor
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_0211618C:
+    ands    r0,r4,#0x20
+    beq     LAB_021161C4
+    mov     r3,#0x1
+    mov     r0,r6
+    mov     r1,r5
+    mov     r2,#0x0
+    str     r3,[r6,#0x10C]
+    bl      _ZN5Enemy12KillByAttackER5Actor
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_021161C4:
+    ldrh    r0,[r5,#0xC]
+    cmp     r0,#0xBF
+    moveq   r0,#0x1
+    movne   r0,#0x0
+    cmp     r0,#0x0
+    addeq   r13,r13,#0x20
+    popeq   {r4-r6,r15}
+    ldrb    r0,[r5,#0x6F9]
+    cmp     r0,#0x1
+    beq     LAB_02116200
+    mov     r0,r5
+    bl      _ZN6Player9IsOnShellEv
+    cmp     r0,#0x1
+    bne     LAB_02116214
+LAB_02116200:
+    mov     r0,r6
+    bl      FUNC_02115F84
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_02116214:
+    mov     r0,r6
+    mov     r2,r5
+    add     r1,r6,#0x110
+    bl      _ZN5Actor16JumpedOnByPlayerER12CylinderClsnR6Player
+    cmp     r0,#0x0
+    beq     LAB_02116268
+    mov     r0,r5
+    mov     r1,#0x28000
+    bl      _ZN6Player6BounceE5Fix12IiE
+    mov     r3,#0x1
+    mov     r0,r6
+    mov     r1,r5
+    mov     r2,#0x0
+    str     r3,[r6,#0x10C]
+    bl      _ZN5Enemy12KillByAttackER5Actor
+    ldr     r0,=#0x11E
+    add     r1,r6,#0x74
+    bl      0x2012694
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+LAB_02116268:
+    ldr     r0,[r6,#0x5C]
+    mov     r4,#0x1
+    str     r0,[r13,#0x14]
+    ldr     r1,[r6,#0x60]
+    mov     r0,#0x0
+    str     r1,[r13,#0x18]
+    ldr     r2,[r6,#0x64]
+    add     r1,r13,#0x14
+    str     r2,[r13,#0x1C]
+    str     r4,[r13]
+    str     r0,[r13,#0x4]
+    mov     r0,r5
+    mov     r2,#0x2
+    mov     r3,#0xC000
+    str     r4,[r13,#0x8]
+    bl      _ZN6Player4HurtERK7Vector3j5Fix12IiEjjj
+    add     r13,r13,#0x20
+    pop     {r4-r6,r15}
+
+FUNC_0211691C:
+    push    {r14}
+    sub     r13,r13,#0x4
+    str     r1,[r0,#0x3BC]
+    ldr     r3,[r0,#0x3BC]
+    ldr     r2,[r3]
+    cmp     r2,#0x0
+    addeq   r13,r13,#0x4
+    moveq   r0,#0x1
+    popeq   {r15}
+    ldr     r1,[r3,#0x4]
+    add     r0,r0,r1,asr #0x1
+    ands    r1,r1,#0x1
+    ldrne   r1,[r0]
+    ldrne   r1,[r1,r2]
+    ldreq   r1,[r3]
+    blx     r1
+    add     r13,r13,#0x4
+    pop     {r15}
+
+FUNC_0211696C:
+    push    {r4-r8,r14}
+    sub     r13,r13,#0x18
+    mov     r4,r0
+    add     r0,r13,#0x8
+    add     r1,r4,#0x5C
+    mov     r2,#0x3
+    bl      Vec3_Asr
+    ldr     r1,[r13,#0x8]
+    ldr     r2,[r13,#0xC]
+    ldr     r3,[r13,#0x10]
+    ldr     r0,=MATRIX_SCRATCH_PAPER
+    bl      Matrix4x3_FromTranslation
+    ldrsh   r1,[r4,#0x8C]
+    ldrsh   r2,[r4,#0x8E]
+    ldrsh   r3,[r4,#0x90]
+    ldr     r0,=MATRIX_SCRATCH_PAPER
+    bl      0x203C0B4
+    ldr     r8,=MATRIX_SCRATCH_PAPER
+    add     r14,r4,#0x31C
+    mov     r6,r8
+    mov     r12,r14
+    ldmia   r8!,{r0-r3}
+    stmia   r14!,{r0-r3}
+    ldmia   r8!,{r0-r3}
+    stmia   r14!,{r0-r3}
+    ldmia   r8,{r0-r3}
+    stmia   r14,{r0-r3}
+    mov     r7,#0x0
+    str     r7,[r4,#0x3C0]
+    str     r7,[r4,#0x3C4]
+    str     r7,[r4,#0x3C8]
+    mov     r5,r6
+    ldmia   r12!,{r0-r3}
+    stmia   r6!,{r0-r3}
+    ldmia   r12!,{r0-r3}
+    stmia   r6!,{r0-r3}
+    ldmia   r12,{r0-r3}
+    stmia   r6,{r0-r3}
+    ldr     r0,[r4,#0x314]
+    mov     r1,r5
+    add     r0,r0,#0xC0
+    mov     r2,r5
+    bl      MulMat4x3Mat4x3
+    mov     r0,r5
+    ldr     r1,[r0,#0x24]
+    add     r5,r4,#0x3C0
+    str     r1,[r4,#0x3C0]
+    ldr     r1,[r0,#0x28]
+    add     r3,r4,#0x3C4
+    str     r1,[r4,#0x3C4]
+    ldr     r1,[r0,#0x2C]
+    add     r2,r4,#0x3C8
+    str     r1,[r4,#0x3C8]
+    ldr     r1,[r5]
+    mov     r1,r1,lsl #0x3
+    str     r1,[r5]
+    ldr     r1,[r3]
+    mov     r1,r1,lsl #0x3
+    str     r1,[r3]
+    ldr     r1,[r3]
+    sub     r1,r1,#0xA000
+    str     r1,[r3]
+    ldr     r1,[r2]
+    mov     r1,r1,lsl #0x3
+    str     r1,[r2]
+    ldr     r2,[r4,#0x60]
+    ldr     r1,[r4,#0x5C]
+    ldr     r3,[r4,#0x64]
+    sub     r2,r2,#0x18000
+    mov     r1,r1,asr #0x3
+    mov     r2,r2,asr #0x3
+    mov     r3,r3,asr #0x3
+    bl      Matrix4x3_FromTranslation
+    ldr     r7,=MATRIX_SCRATCH_PAPER
+    add     r6,r4,#0x38C
+    mov     r5,r6
+    ldmia   r7!,{r0-r3}
+    stmia   r6!,{r0-r3}
+    ldmia   r7!,{r0-r3}
+    stmia   r6!,{r0-r3}
+    ldmia   r7,{r0-r3}
+    stmia   r6,{r0-r3}
+    mov     r14,#0x258000
+    mov     r12,#0xF
+    str     r14,[r13]
+    mov     r2,r5
+    mov     r0,r4
+    add     r1,r4,#0x364
+    mov     r3,#0x64000
+    str     r12,[r13,#0x4]
+    bl      _ZN5Actor19DropShadowRadHeightER11ShadowModelR9Matrix4x35Fix12IiES5_j
+    add     r13,r13,#0x18
+    pop     {r4-r8,r15}
+
+_ZN6Snufit11State1Func1Ev:
+    push    {r4,r14}
+    sub     r13,r13,#0x8
+    mov     r4,r0
+    mov     r1,#0x4000
+    mov     r12,#0x100
+    add     r0,r4,#0x8C
+    rsb     r1,r1,#0x0
+    mov     r2,#0xA
+    mov     r3,#0x200
+    str     r12,[r13]
+    bl      ApproachAngle
+    mov     r1,#0x4000
+    add     r0,r4,#0x8C
+    rsb     r1,r1,#0x0
+    mov     r2,#0x200
+    bl      _Z14ApproachLinearRsss
+    add     r0,r4,#0x100
+    ldrh    r0,[r0]
+    cmp     r0,#0x0
+    bne     LAB_02116318
+    mov     r0,r4
+    bl      FUNC_02115F84
+LAB_02116318:
+    mov     r0,#0x1
+    add     r13,r13,#0x8
+    pop     {r4,r15}
+
+_ZN6Snufit11State1Func0Ev:
+    mov     r3,#0x0
+    str     r3,[r0,#0xA4]
+    str     r3,[r0,#0xA8]
+    mov     r1,#0x5000
+    str     r3,[r0,#0xAC]
+    mov     r2,#0x32000
+    str     r2,[r0,#0xA8]
+    rsb     r1,r1,#0x0
+    str     r1,[r0,#0x9C]
+    add     r1,r0,#0x100
+    mov     r2,#0xA
+    strh    r2,[r1]
+    str     r3,[r0,#0xB0]
+    mov     r0,#0x1
+    bx      r14
+
+_ZN6Snufit11State0Func1Ev:
+    push    {r4-r6,r14}
+    sub     r13,r13,#0x48
+    mov     r6,r0
+    bl      0x2010A08
+    movs    r5,r0
+    beq     LAB_021164B4
+    add     r0,r5,#0x5C
+    add     r3,r13,#0x8
+    ldmia   r0,{r0-r2}
+    stmia   r3,{r0-r2}
+    ldr     r4,[r13,#0x8]
+    ldr     r3,[r13,#0xC]
+    ldr     r2,[r13,#0x10]
+    add     r1,r13,#0x38
+    add     r0,r6,#0x5C
+    str     r4,[r13,#0x38]
+    str     r3,[r13,#0x3C]
+    str     r2,[r13,#0x40]
+    bl      Vec3_HorzAngle
+    add     r1,r6,#0x300
+    strh    r0,[r1,#0xE0]
+    mov     r3,#0x500
+    str     r3,[r13]
+    ldrsh   r1,[r1,#0xE0]
+    add     r0,r6,#0x94
+    mov     r2,#0x1
+    bl      ApproachAngle
+    ldr     r0,[r6,#0x358]
+    mov     r0,r0,lsl #0x4
+    mov     r0,r0,lsr #0x10
+    cmp     r0,#0xF
+    bcc     LAB_021164B4
+    add     r0,r6,#0x100
+    ldrh    r0,[r0]
+    cmp     r0,#0x0
+    bne     LAB_021164B4
+    ldr     r0,[r6,#0x3DC]
+    cmp     r0,#0x3
+    bge     LAB_021164B4
+    ldrsb   r0,[r6,#0xCC]
+    add     r2,r6,#0x3C0
+    mvn     r4,#0x0
+    str     r0,[r13]
+    mov     r0,#0xE9
+    mov     r1,#0x1
+    mov     r3,#0x0
+    str     r4,[r13,#0x4]
+    bl      _ZN5Actor5SpawnEjjRK7Vector3PK10Vector3_16ii
+    movs    r4,r0
+    beq     LAB_021164B4
+    add     r1,r6,#0x74
+    mov     r0,#0xFB
+    bl      0x2012694
+    mov     r1,#0x0
+    mov     r0,#0x1E000
+    str     r0,[r13,#0x1C]
+    str     r1,[r13,#0x14]
+    str     r1,[r13,#0x18]
+    str     r1,[r13,#0x20]
+    str     r1,[r13,#0x24]
+    str     r1,[r13,#0x28]
+    ldrsh   r1,[r6,#0x8E]
+    ldr     r0,=MATRIX_SCRATCH_PAPER
+    bl      Matrix4x3_FromRotationY
+    ldrsh   r1,[r6,#0x8C]
+    ldr     r0,=MATRIX_SCRATCH_PAPER
+    bl      Matrix4x3_ApplyInPlaceToRotationX
+    ldr     r1,=MATRIX_SCRATCH_PAPER
+    add     r0,r13,#0x14
+    add     r2,r13,#0x20
+    bl      MulVec3Mat4x3
+    ldr     r0,[r13,#0x20]
+    add     r3,r6,#0x3DC
+    str     r0,[r4,#0xA4]
+    ldr     r0,[r13,#0x24]
+    mov     r1,#0x4
+    str     r0,[r4,#0xA8]
+    ldr     r2,[r13,#0x28]
+    add     r0,r6,#0x100
+    str     r2,[r4,#0xAC]
+    ldr     r2,[r3]
+    add     r2,r2,#0x1
+    str     r2,[r3]
+    strh    r1,[r0]
+LAB_021164B4:
+    add     r0,r6,#0x350
+    bl      _ZN9Animation8FinishedEv
+    cmp     r0,#0x0
+    beq     LAB_02116568
+    cmp     r5,#0x0
+    beq     LAB_02116550
+    add     r3,r5,#0x5C
+    ldr     r0,[r3]
+    add     r1,r13,#0x2C
+    str     r0,[r13,#0x2C]
+    ldr     r2,[r3,#0x4]
+    add     r0,r6,#0x5C
+    str     r2,[r13,#0x30]
+    ldr     r2,[r3,#0x8]
+    str     r2,[r13,#0x34]
+    bl      Vec3_Dist
+    cmp     r0,#0x3E8000
+    ble     LAB_02116518
+    ldr     r1,=_ZN6Snufit6statesE + 0x20
+    mov     r0,r6
+    add     r2,r6,#0x100
+    mov     r3,#0x0
+    strh    r3,[r2]
+    bl      FUNC_0211691C
+    b       LAB_02116568
+LAB_02116518:
+    add     r0,r6,#0x100
+    mov     r1,#0x32
+    strh    r1,[r0]
+    mov     r2,#0x0
+    ldr     r0,=_ZN6Snufit12waitAnimFileE
+    str     r2,[r13]
+    ldr     r1,[r0,#0x4]
+    add     r0,r6,#0x300
+    mov     r3,#0x1000
+    bl      _ZN9ModelAnim7SetAnimER8BCA_Filei5Fix12IiEj
+    ldr     r1,=_ZN6Snufit6statesE + 0x30
+    mov     r0,r6
+    bl      FUNC_0211691C
+    b       LAB_02116568
+LAB_02116550:
+    ldr     r1,=_ZN6Snufit6statesE + 0x20
+    mov     r0,r6
+    add     r2,r6,#0x100
+    mov     r3,#0x0
+    strh    r3,[r2]
+    bl      FUNC_0211691C
+LAB_02116568:
+    mov     r0,#0x1
+    add     r13,r13,#0x48
+    pop     {r4-r6,r15}    
+
+_ZN6Snufit11State0Func0Ev:
+    push    {r4,r14}
+    sub     r13,r13,#0x8
+    mov     r4,r0
+    mov     r1,#0x0
+    str     r1,[r4,#0x3DC]
+    ldr     r0,=_ZN6Snufit14attackAnimFileE
+    str     r1,[r13]
+    ldr     r1,[r0,#0x4]
+    add     r0,r4,#0x300
+    mov     r2,#0x40000000
+    mov     r3,#0x1000
+    bl      _ZN9ModelAnim7SetAnimER8BCA_Filei5Fix12IiEj
+    add     r0,r4,#0x100
+    mov     r1,#0x0
+    strh    r1,[r0]
+    mov     r0,#0x1
+    add     r13,r13,#0x8
+    pop     {r4,r15}
+
+_ZN6Snufit11State3Func1Ev:
+    push    {r4,r5,r14}
+    sub     r13,r13,#0x34
+    mov     r5,r0
+    mov     r4,#0x0
+    bl      0x2010A08
+    cmp     r0,#0x0
+    beq     LAB_021166B8
+    add     r0,r0,#0x5C
+    add     r3,r13,#0x4
+    ldmia   r0,{r0-r2}
+    stmia   r3,{r0-r2}
+    ldr     r4,[r13,#0x4]
+    ldr     r3,[r13,#0x8]
+    ldr     r2,[r13,#0xC]
+    add     r1,r13,#0x1C
+    add     r0,r5,#0x5C
+    str     r4,[r13,#0x1C]
+    str     r3,[r13,#0x20]
+    str     r2,[r13,#0x24]
+    bl      Vec3_HorzAngle
+    add     r1,r5,#0x300
+    strh    r0,[r1,#0xE0]
+    ldr     r4,[r13,#0x4]
+    ldr     r3,[r13,#0x8]
+    ldr     r2,[r13,#0xC]
+    add     r1,r13,#0x28
+    add     r0,r5,#0x5C
+    str     r4,[r13,#0x28]
+    str     r3,[r13,#0x2C]
+    str     r2,[r13,#0x30]
+    bl      Vec3_VertAngle
+    mov     r4,r0
+    add     r1,r13,#0x4
+    add     r0,r5,#0x5C
+    bl      Vec3_Dist
+    cmp     r0,#0x1F4000
+    movge   r0,#0x0
+    strge   r0,[r5,#0xA4]
+    strge   r0,[r5,#0xA8]
+    strge   r0,[r5,#0xAC]
+    bge     LAB_021166C4
+    mov     r1,#0x0
+    mov     r0,#0x1000
+    str     r1,[r13,#0x18]
+    rsb     r0,r0,#0x0
+    str     r0,[r13,#0x18]
+    str     r1,[r13,#0x10]
+    str     r1,[r13,#0x14]
+    ldrsh   r1,[r5,#0x8E]
+    ldr     r0,=MATRIX_SCRATCH_PAPER
+    bl      Matrix4x3_FromRotationY
+    ldr     r1,=MATRIX_SCRATCH_PAPER
+    add     r0,r13,#0x10
+    add     r2,r5,#0xA4
+    bl      MulVec3Mat4x3
+    b       LAB_021166C4
+LAB_021166B8:
+    add     r0,r5,#0x100
+    mov     r1,r4
+    strh    r1,[r0]
+LAB_021166C4:
+    mov     r3,#0x500
+    str     r3,[r13]
+    add     r0,r5,#0x300
+    ldrsh   r1,[r0,#0xE0]
+    add     r0,r5,#0x94
+    mov     r2,#0x1
+    bl      ApproachAngle
+    mov     r3,#0x500
+    mov     r1,r4
+    add     r0,r5,#0x92
+    mov     r2,#0x1
+    str     r3,[r13]
+    bl      ApproachAngle
+    add     r0,r5,#0x100
+    ldrh    r0,[r0]
+    cmp     r0,#0x0
+    bne     LAB_02116714
+    ldr     r1,=_ZN6Snufit6statesE + 0x00
+    mov     r0,r5
+    bl      FUNC_0211691C
+LAB_02116714:
+    mov     r0,#0x1
+    add     r13,r13,#0x34
+    pop     {r4,r5,r15}
+
+_ZN6Snufit11State3Func0Ev:
+    mov     r1,#0x0
+    str     r1,[r0,#0xA4]
+    str     r1,[r0,#0xA8]
+    str     r1,[r0,#0xAC]
+    mov     r0,#0x1
+    bx      r14
+
+_ZN6Snufit11State2Func1Ev:
+    push    {r4,r14}
+    sub     r13,r13,#0x20
+    mov     r4,r0
+    mov     r2,#0x0
+    add     r0,r4,#0x5C
+    add     r1,r4,#0x3CC
+    str     r2,[r13,#0x4]
+    str     r2,[r13,#0x8]
+    str     r2,[r13,#0xC]
+    bl      Vec3_Dist
+    cmp     r0,#0x1F4000
+    bgt     LAB_02116784
+    add     r0,r4,#0x144
+    bl      _ZNK12WithMeshClsn8IsOnWallEv
+    cmp     r0,#0x0
+    beq     LAB_021167AC
+LAB_02116784:
+    add     r0,r4,#0x5C
+    add     r1,r4,#0x3CC
+    bl      Vec3_HorzAngle
+    add     r1,r4,#0x300
+    strh    r0,[r1,#0xE0]
+    add     r0,r4,#0x100
+    ldrh    r1,[r0]
+    cmp     r1,#0x14
+    movcc   r1,#0x14
+    strcch  r1,[r0]
+LAB_021167AC:
+    mov     r0,#0x100
+    str     r0,[r13]
+    add     r0,r4,#0x300
+    ldrsh   r1,[r0,#0xE0]
+    add     r0,r4,#0x94
+    mov     r2,#0xA
+    mov     r3,#0x200
+    bl      ApproachAngle
+    mov     r3,#0x500
+    add     r0,r4,#0x92
+    mov     r1,#0x0
+    mov     r2,#0x1
+    str     r3,[r13]
+    bl      ApproachAngle
+    mov     r0,#0xA000
+    str     r0,[r13,#0xC]
+    ldrsh   r1,[r4,#0x8E]
+    ldr     r0,=MATRIX_SCRATCH_PAPER
+    bl      Matrix4x3_FromRotationY
+    ldr     r1,=MATRIX_SCRATCH_PAPER
+    add     r0,r13,#0x4
+    add     r2,r4,#0xA4
+    bl      MulVec3Mat4x3
+    add     r0,r4,#0x100
+    ldrh    r0,[r0]
+    cmp     r0,#0x0
+    bne     LAB_02116834
+    ldr     r1,=_ZN6Snufit6statesE + 0x20
+    mov     r0,r4
+    bl      FUNC_0211691C
+    add     r13,r13,#0x20
+    mov     r0,#0x1
+    pop     {r4,r15}
+LAB_02116834:
+    mov     r0,r4
+    bl      0x2010A08
+    cmp     r0,#0x0
+    beq     LAB_0211688C
+    add     r3,r0,#0x5C
+    ldr     r0,[r3]
+    add     r1,r13,#0x10
+    str     r0,[r13,#0x10]
+    ldr     r2,[r3,#0x4]
+    add     r0,r4,#0x5C
+    str     r2,[r13,#0x14]
+    ldr     r2,[r3,#0x8]
+    str     r2,[r13,#0x18]
+    bl      Vec3_Dist
+    cmp     r0,#0x3E8000
+    bge     LAB_0211688C
+    ldr     r1,=_ZN6Snufit6statesE + 0x30
+    mov     r0,r4
+    add     r2,r4,#0x100
+    mov     r3,#0x14
+    strh    r3,[r2]
+    bl      FUNC_0211691C
+LAB_0211688C:
+    mov     r0,#0x1
+    add     r13,r13,#0x20
+    pop     {r4,r15}
+
+_ZN6Snufit11State2Func0Ev:
+    push    {r4,r14}
+    sub     r13,r13,#0x8
+    mov     r4,r0
+    ldr     r0,=RNG_STATE
+    bl      RandomIntInternal
+    mov     r1,r0,lsr #0x8
+    ldr     r0,=RNG_STATE
+    mov     r2,r1,lsl #0xC
+    add     r1,r4,#0x300
+    strh    r2,[r1,#0xE0]
+    bl      RandomIntInternal
+    mov     r0,r0,lsr #0x8
+    and     r0,r0,#0x1F
+    add     r1,r0,#0x32
+    add     r0,r4,#0x100
+    strh    r1,[r0]
+    mov     r2,#0x0
+    ldr     r0,=_ZN6Snufit12waitAnimFileE
+    str     r2,[r13]
+    ldr     r1,[r0,#0x4]
+    add     r0,r4,#0x300
+    mov     r3,#0x1000
+    bl      _ZN9ModelAnim7SetAnimER8BCA_Filei5Fix12IiEj
+    mov     r0,#0x1
+    add     r13,r13,#0x8
+    pop     {r4,r15}

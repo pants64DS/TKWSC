@@ -1,0 +1,7 @@
+release
+build
+bak
+*.nds
+*.sav
+*.ml* 
+newcode.*

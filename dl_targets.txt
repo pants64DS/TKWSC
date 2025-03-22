@@ -1,0 +1,4 @@
+final_boss:       data/stage/ex_w_map/ex_w_map_icl.bin
+infinite_floor:   data/stage/ex_luigi/ex_luigi_00_isc.bin
+intro_and_ending: MG/097_HUB_Cutscene.bin
+credits:          MG/045_CreditsCutscene.bin
